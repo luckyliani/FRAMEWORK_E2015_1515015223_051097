@@ -17,7 +17,7 @@ class matakuliahcontroller extends Controller
     public function tambah(){
         return view('matakuliah.tambah');
     }
-    public function simpan(matakuliahRequest $input){
+    public function simpan(MatakuliahRequest $input){
         $matakuliah = new matakuliah;
         $matakuliah->id=$input->id;
         $matakuliah->title=$input->title;
@@ -34,7 +34,7 @@ public function lihat($id){
         return view('matakuliah.lihat')->with(array('matakuliah'=>$matakuliah));
     }
 
-    public function update($id, matakuliahRequest $input){
+    public function update($id, MatakuliahRequest $input){
         $matakuliah = matakuliah::find($id);
         $matakuliah ->id=$input->id;
         $matakuliah ->title=$input->title;
